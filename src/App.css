@@ -1,0 +1,137 @@
+/* App-level & Mobile Container Styles */
+
+/* Outer Shell for Desktop Emulation */
+.mobile-shell-wrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #172554 0%, #090d16 100%);
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* Device Mockup Shell (Desktop view) */
+.device-frame {
+  width: 100%;
+  max-width: 430px;
+  height: 900px;
+  max-height: calc(100vh - 40px);
+  background: var(--bg-primary);
+  border-radius: 44px;
+  border: 10px solid #1e293b;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(34, 197, 94, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Device Speaker / Notch preview on desktop */
+.device-notch {
+  width: 130px;
+  height: 24px;
+  background: #0f172a;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: var(--z-max);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.device-notch__camera {
+  width: 10px;
+  height: 10px;
+  background: #020617;
+  border-radius: 50%;
+  border: 1px solid #334155;
+}
+
+/* Inner App viewport */
+.app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 72px; /* Space for tab bar */
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar inside phone view */
+.app::-webkit-scrollbar {
+  width: 4px;
+}
+
+.app::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: var(--radius-full);
+}
+
+/* SOS Active Banner */
+.sos-active-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sos);
+  background: var(--color-emergency-red);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  animation: sos-banner-pulse 2s infinite;
+  text-align: center;
+  justify-content: center;
+}
+
+.sos-active-bar__pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  animation: sos-dot-pulse 1s infinite;
+}
+
+/* Responsive adjustment for native mobile screens */
+@media (max-width: 600px) {
+  .mobile-shell-wrapper {
+    padding: 0;
+    background: var(--bg-primary);
+  }
+
+  .device-frame {
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .device-notch {
+    display: none;
+  }
+}
+
+@keyframes sos-banner-pulse {
+  0%, 100% { background: var(--color-emergency-red); }
+  50% { background: #991B1B; }
+}
+
+@keyframes sos-dot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

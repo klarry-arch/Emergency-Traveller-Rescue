@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534" />
+      <stop offset="100%" style="stop-color:#052E16" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#bg)" />
+  <!-- Mountain -->
+  <path d="M8 52 L24 18 L32 30 L40 18 L56 52 Z" fill="#22C55E" opacity="0.3" />
+  <path d="M12 52 L28 22 L34 32 L40 22 L52 52 Z" fill="#4ADE80" opacity="0.4" />
+  <!-- Location pin -->
+  <circle cx="32" cy="28" r="6" fill="#DC2626" />
+  <circle cx="32" cy="28" r="3" fill="white" />
+  <path d="M32 34 L35 28 L29 28 Z" fill="#DC2626" />
+  <!-- Compass -->
+  <path d="M32 46 L30 50 L32 48 L34 50 Z" fill="white" />
+</svg>
