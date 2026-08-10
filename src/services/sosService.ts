@@ -111,8 +111,11 @@ export async function shareLocation(message: string): Promise<boolean> {
 
   // Fallback: copy to clipboard
   try {
-    await navigator.clipboard.writeText(message);
-    return true;
+    if (typeof navigator !== 'undefined' && 'clipboard' in navigator && (navigator as Navigator).clipboard) {
+      await (navigator as Navigator).clipboard.writeText(message);
+      return true;
+    }
+    return false;
   } catch {
     return false;
   }

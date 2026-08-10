@@ -34,9 +34,6 @@ export default function CompassScreen({ heading, position, destination, onBack }
     );
   }
 
-  // Relative bearing for destination arrow (relative to compass heading)
-  const relativeDestBearing = destBearing !== null ? (destBearing - currentHeading + 360) % 360 : null;
-
   return (
     <div className="screen" style={{ justifyContent: 'center' }}>
       {/* Back Button */}

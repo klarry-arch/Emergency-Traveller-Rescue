@@ -7,7 +7,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import type {
-  Screen, Destination, BreadcrumbTrack,
+  Screen, Destination, Route, BreadcrumbTrack,
   EmergencyContact, EmergencyProfile, SOSData, TripPlan
 } from './types';
 import { useGPS, useBattery, useNetwork, useSettings, useCompass } from './hooks';
@@ -178,10 +178,6 @@ export default function App() {
 
   const cancelSOS = useCallback(() => {
     setShowSOSConfirm(false);
-  }, []);
-
-  const deactivateSOS = useCallback(() => {
-    setSOSData(null);
   }, []);
 
   // ─── Location Sharing ──────────────────────────────────

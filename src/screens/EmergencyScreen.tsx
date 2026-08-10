@@ -41,7 +41,7 @@ export default function EmergencyScreen({
   networkStatus,
   emergencyProfile,
   sosData,
-  compassHeading,
+  compassHeading: _compassHeading,
   selectedDestination,
   breadcrumbTrack,
   onUpdateProfile,

@@ -23,7 +23,7 @@ export default function TripScreen({
   activeTripPlan,
   onSaveTripPlan,
   onBack,
-  position,
+  position: _position,
   breadcrumbTrack,
   onStartTracking,
   onStopTracking,
